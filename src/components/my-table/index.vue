@@ -28,56 +28,56 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, PropType } from "vue";
-import { Columns } from "./type";
+import { computed, PropType } from 'vue'
+import { Columns } from './type'
 
 let props = defineProps({
   columns: {
-    type: Array as PropType<Columns[]>,
+    type: Array as PropType<Columns[]>
   },
   tableData: {
-    type: Array as PropType<any[]>,
+    type: Array as PropType<any[]>
   },
   paginationAlign: {
-    type: String as PropType<"left" | "center" | "right">,
-    default: "left",
+    type: String as PropType<'left' | 'center' | 'right'>,
+    default: 'left'
   },
   currentPage: {
     type: Number,
-    default: 1,
+    default: 1
   },
   pageSize: {
     type: Number,
-    default: 10,
+    default: 10
   },
   pageSizes: {
     type: Array as PropType<number[]>,
-    default: [10, 20, 30, 40],
+    default: [10, 20, 30, 40]
   },
   total: {
     type: Number,
-    default: 0,
-  },
-});
+    default: 0
+  }
+})
 
-const emit = defineEmits(["size-change", "current-change"]);
+const emit = defineEmits(['size-change', 'current-change'])
 const paginationStyle = computed(() => {
   const style = {
-    left: "flex-left",
-    center: "center",
-    right: "flex-end",
-  };
+    left: 'flex-left',
+    center: 'center',
+    right: 'flex-end'
+  }
   return {
-    "justify-content": style[props.paginationAlign],
-  };
-});
+    'justify-content': style[props.paginationAlign]
+  }
+})
 
 const handleSizeChange = (val: number) => {
-  emit("size-change", val);
-};
+  emit('size-change', val)
+}
 const handleCurrentChange = (val: number) => {
-  emit("current-change", val);
-};
+  emit('current-change', val)
+}
 </script>
 
 <style lang="scss" scoped>
