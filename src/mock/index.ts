@@ -21,8 +21,6 @@ for (let i = 0; i < 100; i++) { // 可自定义生成的个数
 // list 分页接口()
 
 Mock.mock('/api/list', 'post', (params: any) => {
-  console.log('sfsfsfs');
-  
   let info = JSON.parse(params.body)
   let [index, size, total] = [info.current, info.pageSize, dataList.length]
   let len = total / size
