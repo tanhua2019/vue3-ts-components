@@ -1,8 +1,10 @@
 import { App } from "vue";
 import myTable from './my-table'
+import myIcon from './my-icon'
 
 const components = [
-  myTable
+  myTable,
+  myIcon
 ]
 
 export default {
